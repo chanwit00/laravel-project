@@ -21,8 +21,6 @@
 
 <body>
     <table border="0" width="100%">
-        
-        
         <tr>
             <td colspan="2" align="center">
                 <h1>ใบสั่งซื้อ</h1>
@@ -83,13 +81,14 @@
             <td>
                 <h4>หมายเหตุ</h4>
                 <ul>
-                    <li>ชําระเงินโดยโอนเข้าบัญชีXXX ธนาคาร YYY สาขา ZZZ (ออมทรัพย์)</li>
+                    <li>ชําระเงินโดยโอนเข้าบัญชีXXX ธนาคาร YYY สาขา ZZZ (ออมทรัพย)์</li>
                     <li>กรุณาชําระเงินภายใน 7 วัน หลังจากที่สั่งซื้อ</li>
                     <li>ชําระเงินแล้วส่งหลักฐานมาที่ sales@bikeshop.com หรือ LINE: @bikeshop</li>
                 </ul>
             </td>
             <td align="right"><strong>จํานวนเงินรวมทั้งสิ้น</strong>
-                <h1>{{ number_format ($total_amount) }} บาท  </h1>
+                <h1>{{ $total_amount }} บาท
+                </h1>
             </td>
 
         </tr>
