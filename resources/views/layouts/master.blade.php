@@ -76,8 +76,7 @@
 
     <div class="container">
         <div style="text-align: center;">
-            <h2>นายนาวิน ค้ำจุน</h2>
-            <h2>6406021630039</h2>
+            <h2>Bikeshop System</h2>
         </div> @yield('content')
 
         @if (session('msg'))
