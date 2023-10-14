@@ -22,9 +22,11 @@ class OrderdetailController extends Controller
             $name = $c->product->name;
             $price = $c->product->price;
             $qty = $c->qty;
+            $detail_product[] = array($name, $price, $qty);
             array_push($detail_product, $name, $price, $qty);
         }
-        return compact('order','detail_product');
+        return compact('detail_product');
+        // return view('order/detail', compact('order', 'detail_product'));
         
     }
     

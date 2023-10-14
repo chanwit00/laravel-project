@@ -32,7 +32,7 @@
                             <td> {{$o->ref_id}} </td>
                             <td> {{$o->user->name}} </td>
                             <td> {{ $o->created_at->format("Y/m/d") }} </td>
-                            <td> <a href="{{url('/order/'.$o->id)}}" class="btn btn-info">รายละเอียด</a> </td>
+                            <td> <a href="{{url('/order/detail/'.$o->id)}}" class="btn btn-info">รายละเอียด</a> </td>
                             <td> 
                                 @if ($o->payment_status == 0)
                                     <span class="label label-danger">ยังไม่ชำระเงิน</span>

@@ -82,3 +82,6 @@ Route::get('/cart/finish', [App\Http\Controllers\CartController::class, 'finish_
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
 Route::get('/order/insertOrder', [App\Http\Controllers\OrderController::class, 'insertOrder']);
 Route::get('/order/insertDetail', [App\Http\Controllers\OrderController::class, 'insertDetail']);
+
+
+Route::get('/order/detail/{id?}', [App\Http\Controllers\OrderdetailController::class, 'viewDetail']);
