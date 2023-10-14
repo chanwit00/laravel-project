@@ -15,7 +15,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">ชื่อผู้ใช้</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">ชื่อ-นามสกุล</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text"
