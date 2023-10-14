@@ -79,8 +79,16 @@ class CartController extends Controller
         }
         $cust_name = $request->cust_name;
         $cust_email = $request->cust_email;
-        $po_no = 'PO' . date("Ymd");
+        // $po_no = 'PO' . date("Ymd");
         $po_date = date("Y-m-d H:i:s");
+
+        
+        // สุ่มค่า PO
+        $randNum = str_pad(rand(0, 99), 2, '0', STR_PAD_LEFT);
+        $po_no = 'PO'.date("Ymd").$randNum;
+        Session::put('po_no', $po_no);
+
+        
         $total_amount = 0;
         foreach ($cart_items as $c) {
             $total_amount += $c['price'] * $c['qty'];
@@ -122,6 +130,7 @@ class CartController extends Controller
             $cart_items = array();
         }
         Session::remove('cart_items');
-        return redirect('/');
+        Session::remove('po_no');
+        return redirect('/home');
     }
 }
