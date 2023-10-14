@@ -62,12 +62,12 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <label>ชื่อ-นามสกุล</label>
-                            <input type="text" class="form-control" id="cust_name" placeholder="ชื่อ-นามสกุล">
+                            <input type="text" class="form-control" id="cust_name" value="{{ Auth::user()->name }}">
                         </div>
 
                         <div class="form-group">
                             <label>อีเมล</label>
-                            <input type="text" class="form-control" id="cust_email" placeholder="อีเมล์ของท่าน">
+                            <input type="text" class="form-control" id="cust_email" value="{{ Auth::user()->email }}">
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                 "{{ URL::to('cart/complete') }}?cust_name=" + $('#cust_name').val() + '&cust_email=' +
                 $('#cust_email').val(), "_blank",
             );
-            window.location.href = "{{ URL::to('cart/finish') }}";
+            window.location.href = "{{ URL::to('order/insertOrder') }}";
         }
     </script>
 @stop
