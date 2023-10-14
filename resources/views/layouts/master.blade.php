@@ -76,7 +76,7 @@
 
     <div class="container">
         <div style="text-align: center;">
-            <h2>Bikeshop System</h2>
+            <h2>Bikeshop System2</h2>
         </div> @yield('content')
 
         @if (session('msg'))
