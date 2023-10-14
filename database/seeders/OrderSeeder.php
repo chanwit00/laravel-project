@@ -19,6 +19,11 @@ class OrderSeeder extends Seeder
                 'ref_id'=>'PO202310141',
                 'user_id' => 1,
                 'status' => 1
+            ],
+            [
+                'ref_id'=>'PO202310142',
+                'user_id' => 3,
+                'status' => 1
             ]
         ));
     }

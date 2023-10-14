@@ -20,20 +20,29 @@
                         <th>OrderID</th>
                         <th>เลขที่ใบสั่งซื้อ</th>
                         <th>ชื่อลูกค้า</th>
-                        <th>วันที่สั่งซื้อ</th>
+                        <th>วันที่สั่งซื้อสินค้า</th>
                         <th>รายละเอียด</th>
-                        <th>สถานะ</th>
+                        <th>สถานะการชำระเงิน</th>
                     </tr>
                 </thead>
                 <tbody>
-                     <tr>
-                        <td>id</td>
-                        <td>order_id</td>
-                        <td>customer_id</td>
-                        <td>order_date</td>
-                        <td>detail</td>
-                        <td>status</td>
-                     </tr>
+                    @foreach ($orders as $o)
+                        <tr>
+                            <td> {{$o->id}} </td>
+                            <td> {{$o->ref_id}} </td>
+                            <td> {{$o->user->name}} </td>
+                            <td> {{ $o->created_at->format("Y/m/d") }} </td>
+                            <td> <a href="{{url('/order/'.$o->id)}}" class="btn btn-info">รายละเอียด</a> </td>
+                            <td> 
+                                @if ($o->payment_status == 0)
+                                    <span class="label label-danger">ยังไม่ชำระเงิน</span>
+                                @else
+                                    <span class="label label-success">ชำระเงินแล้ว</span>
+                                @endif
+                            </td>
+                        </tr>
+                    
+                    @endforeach
 
                 </tbody>
             </table>

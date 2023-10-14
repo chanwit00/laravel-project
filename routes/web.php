@@ -25,21 +25,30 @@ Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Order_detail;
+use Illuminate\Contracts\Session\Session;
 
 Route::get('/test', function () {
     // return phone::find(1)->typephone->name;
 
-    $order = Order::find(1);
-    $order_data = array(
-        'data' => $order,
-        'user' => $order->user,
-        'detail' => $order->detail
-    );
+    // $order = Order::find(1);
+    // $order_data = array(
+    //     'data' => $order,
+    //     'user' => $order->user,
+    //     'detail' => $order->detail
+    // );
+
 
     $detail = Order_detail::where('order_id', 'like', '%' . $order->id . '%')->get();
     $product_detail = $detail[0]->product;
+    // $detail = Order_detail::where('order_id', 'like' , '%'.$order->id.'%')->get();
+    // $product_detail = $detail[0]->product;
+    // $username = $order->user->name;
+    // $order = Auth::user()->id;
 
-    return compact('detail');
+    $order = Order::where('ref_id', 'like' ,'PO202310141')->get();
+    $order_id = $order[0]->id;
+
+    return compact('order_id');
 
     // return Order_detail::find(1)->order->status;
     // return User::find(1)->name;
@@ -71,3 +80,5 @@ Route::get('/cart/complete', [App\Http\Controllers\CartController::class, 'compl
 Route::get('/cart/finish', [App\Http\Controllers\CartController::class, 'finish_order']);
 
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
+Route::get('/order/insertOrder', [App\Http\Controllers\OrderController::class, 'insertOrder']);
+Route::get('/order/insertDetail', [App\Http\Controllers\OrderController::class, 'insertDetail']);

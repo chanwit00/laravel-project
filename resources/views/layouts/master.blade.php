@@ -32,7 +32,7 @@
                     {{-- ไม่มี --}}
                 @else
                     <li><a href="{{ URL::to('product') }}">จัดการข้อมูลสินค้า </a></li>
-                    <li><a href="#">รายงาน</a></li> 
+                    <li><a href="{{URL::to('order')}}">รายการสั่งซื้อ</a></li> 
                 @endguest
                 </ul>
 
