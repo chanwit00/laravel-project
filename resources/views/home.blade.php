@@ -4,51 +4,7 @@
 
     <div ng-app="app" ng-controller="ctrl">
 
-        {{-- <input type="text" class="form-control" ng-model="helloMessage">
-        <h1>@{ helloMessage }</h1>
-
-        <ul class="breadcrumb">
-            <li><a href="{{ URL::to('product') }}">ประเภทสินค้า</a></li>
-            <li class="active">หน้าแรก </li>
-        </ul>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <strong>หน้าแรก</strong>
-                </div>
-            </div>
-
-            <div class="panel-body">
-                <input type="text" class="form-control" ng-model="query.name" placeholder="ค้นหา">
-                <br>
-                <table class="table table-bordered" ng-if="products.length">
-                    <thead>
-                        <tr>
-                            <th>รหัส</th>
-                            <th>ชื่อสินค้า </th>
-                            <th>ราคาขาย</th>
-                            <th>คงเหลือ</th>
-                            <th>สถานะ</th>
-                        </tr>
-                    </thead>
-                    <tr ng-repeat="p in products|filter:query">
-                        <td>@{p.code}</td>
-                        <td>@{p.name}</td>
-                        <td>@{p.price|number:2}</td>
-                        <td>@{p.qty|number:0}</td>
-                        <td>
-                            <span ng-if="p.qty >= 5" ng-class="{'label label-success': p.qty >= 5}">สินค้าพร้อมขาย</span>
-                            <span ng-if="p.qty > 0 && p.qty < 5"
-                                ng-class="{'label label-warning': p.qty > 0 && p.qty < 5}">สินค้าใกล้หมด</span>
-                            <span ng-if="p.qty == 0" ng-class="{'label label-danger': p.qty == 0}">สินค้าหมด</span>
-                        </td>
-                    </tr>
-                </table>
-                <h3 ng-if="!products.length">ไม่พบข้อมูลสินค้า </h3>
-            </div>
-        </div> --}}
-
+       
         <div class="row">
             <div class="col-md-3">
                 <h1 style="margin: 0 0 30px 0">สินค้าในร้าน</h1>
@@ -56,8 +12,7 @@
             <div class="col-md-9">
                 <div class="pull-right" style="margin-top:10px">
                     <input type="text" class="form-control" ng-model="query" ng-keyup="searchProduct($event)"
-                        style="width:190px" placeholder="พิมพ์ชื่อสินค้า
-            เพื่อค้นหา">
+                        style="width:190px" placeholder="พิมพ์ชื่อสินค้าเพื่อค้นหา">
                 </div>
             </div>
         </div>
