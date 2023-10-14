@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout']);
+Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
 
 use App\Models\User;
@@ -37,10 +37,12 @@ Route::get('/test', function () {
     //     'detail' => $order->detail
     // );
 
+
+    $detail = Order_detail::where('order_id', 'like', '%' . $order->id . '%')->get();
+    $product_detail = $detail[0]->product;
     // $detail = Order_detail::where('order_id', 'like' , '%'.$order->id.'%')->get();
     // $product_detail = $detail[0]->product;
     // $username = $order->user->name;
-
     // $order = Auth::user()->id;
 
     $order = Order::where('ref_id', 'like' ,'PO202310141')->get();
@@ -77,5 +79,6 @@ Route::get('/cart/checkout', [App\Http\Controllers\CartController::class, 'check
 Route::get('/cart/complete', [App\Http\Controllers\CartController::class, 'complete']);
 Route::get('/cart/finish', [App\Http\Controllers\CartController::class, 'finish_order']);
 
+Route::get('/order', [App\Http\Controllers\OrderController::class, 'index']);
 Route::get('/order/insertOrder', [App\Http\Controllers\OrderController::class, 'insertOrder']);
 Route::get('/order/insertDetail', [App\Http\Controllers\OrderController::class, 'insertDetail']);
