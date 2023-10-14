@@ -49,7 +49,7 @@ class OrderController extends Controller
 
     public function reportOrder($ref_id)
     {
-        $order = Order::where('ref_id', 'like', '%' .$ref_id. '%')->first();
+        $order = Order::where('ref_id', 'like', '%' . $ref_id . '%')->first();
         $order->user;
         $cust_name = $order->user->name;
         $cust_email = $order->user->email;
@@ -59,7 +59,7 @@ class OrderController extends Controller
         $cart_items = array();
 
         $details = Order_detail::where('order_id', 'like', '%' . $order->id . '%')->get();
-        foreach($details as $d) {
+        foreach ($details as $d) {
             $cart_items[$d->product->id] = array(
                 "id" => $d->product->id,
                 "code" => $d->product->code,
@@ -68,10 +68,10 @@ class OrderController extends Controller
                 "image_url" => $d->product->image_url,
                 "qty" => $d->qty
 
-            ); 
+            );
             $total_amount += $d->product->price * $d->qty;
         }
-    
+
 
         $html_output = view(
             'cart/complete',
@@ -90,6 +90,5 @@ class OrderController extends Controller
         $mpdf->Output('output.pdf', 'I');
         return $resp->withHeader("Content-type", "application/pdf");
     }
-
 
 }
