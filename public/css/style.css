@@ -1,0 +1,58 @@
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bs-table {
+    margin: 0;
+}
+
+.bs-table thead tr th {
+    color: #fff;
+    background-color: #999999;
+}
+
+.bs-table .bs-price {
+    text-align: right;
+    vertical-align: middle;
+}
+
+.bs-table .bs-center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.bs-product-card {
+    min-height: 290px;
+    text-align: center;
+    position: relative;
+}
+
+.bs-product-card img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 90px;
+    margin-top: 10px;
+}
+
+.bs-product-card .btn-success {
+    position: absolute;
+    bottom: 15px;
+    width: calc(100% - 30px);
+}
+
+.bs-product-card h4 {
+    text-align: left;
+}
+
+.bs-product-card .form-group {
+    text-align: left;
+}
+
+.bs-product-card .form-group strong {
+    font-size: 16px;
+}
