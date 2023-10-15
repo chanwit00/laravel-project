@@ -19,15 +19,26 @@ class OrderdetailController extends Controller
         $detail_product = array();
         
         foreach($detail as $c){
+            $id = $c->product->id;
             $name = $c->product->name;
             $price = $c->product->price;
             $qty = $c->qty;
-            $detail_product[] = array($name, $price, $qty);
-            array_push($detail_product, $name, $price, $qty);
+            
+            $detail_product[$id] = array(
+                'id' => $id,
+                'name' => $name,
+                'price' => $price,
+                'qty' => $qty
+            );
         }
-        return compact('detail_product');
-        // return view('order/detail', compact('order', 'detail_product'));
+        // return compact('detail_product');
+        return view('order/detail', compact('order', 'detail_product'));
         
     }
+
+   
+
+
+   
     
 }
