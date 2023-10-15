@@ -34,7 +34,7 @@
                             <td> {{ $o->created_at->format("Y/m/d") }} </td>
                             <td class="bs-center"> <a href="{{url('/order/detail/'.$o->id)}}" class="btn btn-info">รายละเอียด</a> </td>
                             <td class="bs-center"> 
-                                @if ($o->payment_status == 0)
+                                @if ($o->status == 2)
                                     <span class="label label-danger">ยังไม่ชำระเงิน</span>
                                 @else
                                     <span class="label label-success">ชำระเงินแล้ว</span>
