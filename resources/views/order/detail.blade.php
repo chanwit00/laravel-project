@@ -19,28 +19,19 @@
 
                 <tr>
                     <td>เลขที่ใบสั่งซื้อ</td>
-                    <td>{{ $order->ref_id }} </td>
                 </tr>
 
                 <tr>
                     <td>ชื่อลูกค้า</td>
-                    <td>{{ $order->user->name }} </td>
                 </tr>
 
                 <tr>
                     <td>วันที่สั่งซื้อสินค้า</td>
-                    <td>{{ $order->created_at->format('Y/m/d') }} </td>
                 </tr>
 
                 <tr>
                     <td>สถานะการชำระเงิน</td>
-                    <td>
-                        @if ($order->payment_status == 0)
-                            <span class="label label-danger">ยังไม่ชำระเงิน</span>
-                        @else
-                            <span class="label label-success">ชำระเงินแล้ว</span>
-                        @endif
-                    </td>
+                    
 
             </table>
             <br>
@@ -58,16 +49,7 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($detail_product as $dp)
-                        <tr>
-                            <td>{{ $dp->id }}</td>
-                            <td>{{ $dp->product->name }}</td>
-                            <td>{{ $dp->price }}</td>
-                            <td>{{ $dp->qty }}</td>
-                            <td>{{ $dp->total }}</td>
-                        </tr>
-                        
-                    @endforeach
+                   
 
 
                 </tbody>
@@ -76,8 +58,4 @@
 
 
 
-
-
-
-
-        @endsection
+@endsection
